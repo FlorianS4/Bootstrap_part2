@@ -14,6 +14,7 @@ async function initMap() {
     
     // Create an array of alphabetical characters used to label the markers.
     const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    
     // Add some markers to the map.      
     var markers = locations.map(function(location, i){
       return new google.maps.Marker({
@@ -21,7 +22,7 @@ async function initMap() {
           label: labels[i % labels.length]
       });
     });
-    
+
     // Add a marker clusterer to manage the markers.
     const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
   }
